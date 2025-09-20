@@ -538,7 +538,7 @@ nau7802_read_internal(i2c_master_dev_handle_t i2c, int32_t* val, bool lognodata)
   if (*val & 0x800000) {
     *val |= 0xFF000000;
   }
-  ESP_LOGD(TAG, "ADC reads: %u %u %u full %lu 0x%08x", r0, r1, r2, *val, *val);
+  ESP_LOGD(TAG, "ADC reads: %u %u %u full %ld 0x%08lx", r0, r1, r2, *val, (uint32_t) *val);
   return ESP_OK;
 }
 
